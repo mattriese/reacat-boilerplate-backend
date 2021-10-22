@@ -1,10 +1,11 @@
 const express = require("express");
+const cors = require('cors');
 
 const quotesRoutes = require("./routes/quotes");
 const { NotFoundError } = require("./expressError");
 
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 app.use("/quotes", quotesRoutes);
 

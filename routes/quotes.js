@@ -10,8 +10,6 @@ const quotes = [
   "There's a rythmic ceremonial ritual coming up!",
 ];
 
-app.use(cors())
-
 router.get('/', function sendQuotes(req, res) {
   return res.json({ quotes });
 });
