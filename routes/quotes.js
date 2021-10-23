@@ -15,10 +15,11 @@ router.get('/', function sendQuotes(req, res) {
 });
 
 router.post('/', function updateQuotes(req, res) {
-  quotes.unshift(req.body.newQuote);
+  const newQuote = req.body.newQuote;
+  quotes.unshift(newQuote);
   console.log('POST req.body ===', req.body);
   // console.log('PATCH req ===', req);
-  return res.json({ quotes });
+  return res.json({ savedQuote: newQuote });
 });
 
 module.exports = router;
