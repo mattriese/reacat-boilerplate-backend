@@ -9,7 +9,6 @@ app.use(cors())
 app.use(express.json());
 app.use("/quotes", quotesRoutes);
 
-
 /** 404 handler: matches unmatched routes; raises NotFoundError. */
 app.use(function (req, res, next) {
   return next(new NotFoundError());
@@ -22,6 +21,5 @@ app.use(function (err, req, res, next) {
   if (process.env.NODE_ENV !== "test") console.error(status, err.stack);
   return res.status(status).json({ error: { message, status } });
 });
-
 
 module.exports = app;

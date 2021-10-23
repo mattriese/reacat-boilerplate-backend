@@ -21,21 +21,7 @@ router.post('/', function updateQuotes(req, res) {
   // If this was a real database query, this would be wrapped in a try/catch
   quotes.unshift(newQuote);
   console.log('POST req.body ===', req.body);
-  // console.log('PATCH req ===', req);
   return res.json({ savedQuote: newQuote });
 });
 
 module.exports = router;
-
-// /** GET / => [item, ...] */
-
-// router.get("", (req, res, next) => {
-//   return res.json({ items: Item.findAll() });
-// });
-
-// /** POST / {name, price} => new-item */
-
-// router.post("", (req, res, next) => {
-//   let newItem = new Item(req.body.name, req.body.price);
-//   return res.json({ item: newItem });
-// });
